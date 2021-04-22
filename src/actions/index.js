@@ -24,11 +24,5 @@ export const clearDisplay = () => {
 }
 
 export const changeMemory = (memorySet) => {
-    if (memorySet === 'M+'){
-        return ({type:CHANGE_MEMORY})
-    }
-    else if (memorySet === 'MR'){
-
-    }
-    else if (memorySet === 'MC')
+    return({type: CHANGE_MEMORY, payload: memorySet})
 }

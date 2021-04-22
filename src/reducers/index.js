@@ -44,11 +44,26 @@ const reducer = (state, action) => {
             })
         
         case(CHANGE_MEMORY):
-            return({
-                ...state
-            })
-        default:
-            return state;
+            switch(action.payload) {
+                case("M+"):
+                    // make memory equal what is displayed
+                    return ({
+                        ...state,
+                        memory: state.total
+                    })
+                case("MR"):
+                    //add memory's value to the displayed value
+                    return ({
+                        ...state,
+                        total: state.total + state.memory
+                    })
+                case("MC"):
+                    //memory cleared, or set to 0
+                    return({
+                        ...state,
+                        memory: 0
+                    })
+            }
     }
 }
 
